@@ -10,36 +10,36 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-  <div class='calculator'>
-    <div class='row'>
-      <div class='output-field' id='output'>0</div>
-      <button class='btn lighter-green' id='clearField'>C</button>
-    </div>
-    <div class='row'>
-      <button class='btn' id='7'>7</button>
-      <button class='btn' id='8'>8</button>
-      <button class='btn' id='9'>9</button>
-      <button class='btn lighter-green' id='divide'>/</button>
-    </div>
-    <div class='row'>
-      <button class='btn' id='4'>4</button>
-      <button class='btn' id='5'>5</button>
-      <button class='btn' id='6'>6</button>
-      <button class='btn lighter-green' id='multiply'>x</button>
-    </div>
-    <div class='row'>
-      <button class='btn' id='1'>1</button>
-      <button class='btn' id='2'>2</button>
-      <button class='btn' id='3'>3</button>
-      <button class='btn lighter-green' id='subtract'>-</button>
-    </div>
-    <div class='row'>
-      <button class='btn' id='0'>0</button>
-      <button class='btn' id='decimalPoint'>.</button>
-      <button class='btn' id='equalsSign'>=</button>
-      <button class='btn lighter-green' id='add'>+</button>
-    </div>
-  </div>
 
+<div class='calculator'>
+  <div class='output-row'>
+    <div class='answer-field' id='display'></div>
+  </div>
+  <span class='btn' id='7'>7</span>
+  <span class='btn' id='8'>8</span>
+  <span class='btn' id='9'>9</span>
+  <span class='btn lighter-green' id='/'>/</span><br/>
+
+  <span class='btn' id='4'>4</span>
+  <span class='btn' id='5'>5</span>
+  <span class='btn' id='6'>6</span>
+  <span class='btn lighter-green' id='*'>x</span><br/>
+
+  <span class='btn' id='1'>1</span>
+  <span class='btn' id='2'>2</span>
+  <span class='btn' id='3'>3</span>
+  <span class='btn lighter-green' id='-'>-</span><br/>
+
+  <span class='btn' id='0'>0</span>
+  <span class='btn' id='.'>.</span>
+  <span class='btn' id='='>=</span>
+  <span class='btn lighter-green' id='+'>+</span><br/>
+
+  <span class='btn backspace' id='CE'>CE</span>
+  <span class='btn clear-all' id='C'>C</span>
+</div>
+<footer>by <a href='https://github.com/jennypenfield' target='blank'>jenny penfield</a></footer>
 </body>
+<script src='js/jquery-3.2.1.min.js'></script>
+<script src='js/main.js'></script>
 </html>

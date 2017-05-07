@@ -2,7 +2,7 @@
 
 $('.btn').click(function () {
   if (this.id === 'C') {
-    input = ['0']
+    input = ['']
     updateTextField()
   } else if (this.id === 'CE') {
     input.pop()
@@ -15,8 +15,8 @@ $('.btn').click(function () {
   }
 })
 
-var input = ['']
-var totalString = ''
+let input = ['']
+let totalString = ''
 
 function updateTextField () {
   totalString = input.join('')

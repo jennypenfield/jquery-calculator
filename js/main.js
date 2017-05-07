@@ -6,7 +6,7 @@ let operators = ['+', '-', '*', '/']
 
 $('.btn').click(function () {
   if (this.id === 'C') {
-    inputCharArray = ['']
+    inputCharArray = []
     updateTextField()
   } else if (this.id === 'CE') {
     inputCharArray.pop()
@@ -27,6 +27,7 @@ function updateTextField () {
 
 function getTotal () {
   if (hasError(inputCharArray)) {
+    inputCharArray = []
     $('#display').html('ERROR')
   } else {
     totalString = inputCharArray.join('')
@@ -37,13 +38,13 @@ function getTotal () {
 function hasError (inputCharArray) {
   let lastIndex = inputCharArray.length - 1
   // check for two operators in a row
-  for (let i = 1; i < lastIndex; i++) {
+  for (let i = 1; i < inputCharArray.length; i++) {
     if (operators.indexOf(inputCharArray[i]) !== -1 && operators.indexOf(inputCharArray[i - 1]) !== -1) {
       return true
     }
   }
   // check for double decimal points
-  for (let i = 1; i < lastIndex; i++) {
+  for (let i = 1; i < inputCharArray.length; i++) {
     if (inputCharArray[i] === '.' && inputCharArray[i - 1] === '.') {
       return true
     }

@@ -4,7 +4,7 @@ let inputCharArray = []
 let totalString = ''
 let operators = ['+', '-', '*', '/']
 
-$('.btn').click(function () {
+$('.btn').click(function buttonInputToArray() {
   if (this.id === 'C') {
     inputCharArray = []
     updateTextField()
@@ -15,7 +15,6 @@ $('.btn').click(function () {
     getTotal()
   } else {
     inputCharArray.push(this.id)
-    console.log(inputCharArray)
     updateTextField()
   }
 })

@@ -30,7 +30,7 @@ function getTotal () {
     $('#display').html('ERROR')
   } else {
     totalString = inputCharArray.join('')
-    $('#display').html(eval(totalString))
+    $('#display').html(eval(totalString).toFixed(10))
   }
 }
 

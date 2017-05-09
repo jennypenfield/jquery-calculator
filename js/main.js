@@ -4,7 +4,7 @@ let inputCharArray = []
 let totalString = ''
 let operators = ['+', '-', '*', '/']
 
-$('.btn').click(function buttonInputToArray() {
+$('.btn').click(function buttonInputToArray () {
   if (this.id === 'C') {
     inputCharArray = []
     updateTextField()
@@ -35,28 +35,48 @@ function getTotal () {
 }
 
 function hasError (inputCharArray) {
-  let lastIndex = inputCharArray.length - 1
-  // check for two operators in a row
+  // check error conditions
+  if (hasTwoOperatorsInARow(inputCharArray)) {
+    return true
+  }
+  if (hasDoubleDecimalPoints(inputCharArray)) {
+    return true
+  }
+  if (hasOperatorBegOrEnd(inputCharArray)) {
+    return true
+  }
+  if (hasRogueDecimalPoints(inputCharArray)) {
+    return true
+  }
+  return false
+}
+
+function hasTwoOperatorsInARow (inputCharArray) {
   for (let i = 1; i < inputCharArray.length; i++) {
     if (operators.indexOf(inputCharArray[i]) !== -1 && operators.indexOf(inputCharArray[i - 1]) !== -1) {
       return true
     }
   }
-  // check for double decimal points
+}
+
+function hasDoubleDecimalPoints (inputCharArray) {
   for (let i = 1; i < inputCharArray.length; i++) {
     if (inputCharArray[i] === '.' && inputCharArray[i - 1] === '.') {
       return true
     }
   }
-  // check for an operator at the beginning and/or end of array
+}
+
+function hasOperatorBegOrEnd (inputCharArray) {
   if (operators.indexOf(inputCharArray[0]) !== -1 ||
-    operators.indexOf(inputCharArray[lastIndex]) !== -1) {
+    operators.indexOf(inputCharArray[inputCharArray.length - 1]) !== -1) {
     return true
   }
-  // check for decimal point by itself at beginning or end of array
-  if (inputCharArray[lastIndex] === '.' && operators.indexOf(inputCharArray[lastIndex - 1]) !== -1 ||
+}
+
+function hasRogueDecimalPoints (inputCharArray) {
+  if (inputCharArray[inputCharArray.length - 1] === '.' && operators.indexOf(inputCharArray[inputCharArray.length - 1]) !== -1 ||
     inputCharArray[0] === '.' && operators.indexOf(inputCharArray[1]) !== -1) {
     return true
   }
-  return false
 }

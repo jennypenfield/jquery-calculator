@@ -16,6 +16,7 @@ $('.btn').click(function buttonInputCalculator () {
     inputNum = ''
   } else if (OPERATORS.includes(this.id)) {
     numOperArray.push(inputNum)
+    displayTotal()
     numOperArray.push(this.id)
     inputNum = ''
   } else {
